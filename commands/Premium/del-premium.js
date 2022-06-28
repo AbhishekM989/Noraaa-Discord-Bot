@@ -3,7 +3,7 @@ const { Client, Message, MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "del-premium",
-    description: "Deletes A User To Premium Club !",
+    description: "Deletes A User From Premium Club !",
     category: "Premium",
     ownerOnly: true,
     
