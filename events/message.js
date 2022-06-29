@@ -4,6 +4,7 @@ const { badwords } = require('../data.json')
 const prefix = config.prefix
 const token = config.token
 const premiumSchema = require('../commands/modals/premium')
+const blacklist = require('../commands/modals/blacklist-servers')
 const mongoDBURL = require('.././config.json').mongoDBURL
 const Levels = require('discord-xp')
 Levels.setURL(mongoDBURL)
@@ -42,6 +43,8 @@ client.on('message', async message =>{
     let command = client.commands.get(cmd)
     if(!command) command = client.commands.get(client.aliases.get(cmd));
 
+    
+
     if(command.premium && !(await premiumSchema.findOne({ User: message.author.id})))
       return message.reply('**<:wrong:895367205875769354> You Need To Upgrade To Premium To Use This Command !**')
 
@@ -50,6 +53,9 @@ client.on('message', async message =>{
         return message.channel.send(`**${message.member}<:wrong:895367205875769354> You Can't Access Owner Commands !**`)
       }
     }
+
+    const blacklisted = await blacklist.findOne({ Server: message.guild.id})
+    if(blacklisted) return message.channel.send('**<:wrong:895367205875769354> This Server Is Blacklisted By The Owner, Please Contact The Bot Owner To Get This Problem Solved !**')
 
     if(!message.member.permissions.has(command.userPermissions || [])) return message.channel.send(`**<:wrong:895367205875769354> You Are Missing \`${command.userPermissions}\` Permission !**`);
     if(!message.guild.me.permissions.has(command.botPermissions || [])) return message.channel.send(`**<:wrong:895367205875769354> I Am Missing \`${command.botPermissions}\` Permission !**`);

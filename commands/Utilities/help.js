@@ -56,7 +56,7 @@ module.exports = {
 					`
         )
         .setFooter(
-          'Sukuna Is Made With ❤️',
+          `${client.user.username} Is Made With ❤️`,
           message.author.displayAvatarURL({ dynamic: true })
       )
       .addField(`❯ Check Out`, [
@@ -100,17 +100,12 @@ module.exports = {
             : '`No Category Found.`'
           )  
           .addField(
-            "❯ BOT PERMISSION:",
-            command.botPermissions
-              ? `\`${command.botPermissions}\``
-              : '`Pemission Not Defined By Developers`'
+            "❯ OWNER ONLY:",
+            command.ownerOnly
+              ? `\`${command.ownerOnly}\``
+              : '`False`'
           )
-          .addField(
-            "❯ USER PERMISSION:",
-            command.userPermissions
-              ? `\`${command.userPermissions}\``
-              : '`Pemission Not Defined By Developers`'
-          )
+          
         .addField(
           "❯ USAGE:",
           command.usage
