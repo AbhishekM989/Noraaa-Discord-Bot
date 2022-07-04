@@ -19,7 +19,7 @@ module.exports = {
         .setColor("#00ff9e")
         .setTitle(`About ${client.user.username}`)
         .setImage(
-            `https://cdn.discordapp.com/attachments/858014405102796810/893565846079803442/kurama_2.jpg`
+            `https://cdn.discordapp.com/attachments/858014405102796810/992696408278847538/gif1.gif`
         )
         .setDescription(
             `**${client.user.username} Is Made With ❤️**
@@ -30,7 +30,7 @@ module.exports = {
             `**❯ Created On:** ${utc(client.user.createdTimestamp).format(
                 'DD MMMM YYYY HH:mm:ss'
             )}`,
-            `**❯ Developers:** Abhishek, Sahil & Agnel.`,
+            `**❯ Developers:** Abhishek Maurya`,
             '\u200b',
         ])
         .addField(
@@ -57,7 +57,7 @@ module.exports = {
         
         .addField(
             `__Note__`, [
-                `This Bot Is Official Bot Of **Team Valhalla**.`
+                `Developed By \`Abhishek Maurya\``
             ]
         )
         .setFooter(

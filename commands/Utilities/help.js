@@ -51,7 +51,7 @@ module.exports = {
         .addFields(categories)
         .setDescription(
           `
-                    These Are The Commands Which You Can Use In **Noraaa**.
+                    These Are The Commands Which You Can Use In **${client.user.username}**.
 					For More Command Please Type \`${prefix}help <command>\`.
 					`
         )
@@ -60,7 +60,7 @@ module.exports = {
           message.author.displayAvatarURL({ dynamic: true })
       )
       .addField(`❯ Check Out`, [
-        ` • [**Support**](https://discord.gg/rrhhYnUptw)` 
+        ` • [**Support**](https://discord.gg/rrhhYnUptw) • [**Github**](https://github.com/AbhishekM989)`,
       ])
         .setTimestamp()
         .setColor(roleColor);

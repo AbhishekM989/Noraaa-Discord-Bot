@@ -42,13 +42,13 @@ module.exports = {
                 `**❯ ID:** ${member.id}`,
                 `**❯ Avatar:** [Link to avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Time Created:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} (${moment(member.user.createdTimestamp).fromNow()})`,
-                `\u200b`
-            ])
+                `\u200b`,
+            ], true)
 
             .addField('__Member Information__', [
                 `**❯ Highest Role:** ${member.roles.highest.id === message.guild.id ? 'None' : member.roles.highest.name}`,
                 `**❯ Display Role:** ${member.roles.hoist ? member.roles.hoist.name : 'None'}`,
-                `**❯ Joinned:** ${moment(member.joinedAt).format('LL LTS')}`,
+                `**❯ Joinned:** ${moment(member.joinedAt).format('LL LTS')} (${moment(member.joinedAt).fromNow()})`,
                 `**❯ Roles [${roles.length}]:** ${roles.slice(0, 10).join(', ') || 'None'}`,
                 `\u200b`
             ])
