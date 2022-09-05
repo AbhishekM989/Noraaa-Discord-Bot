@@ -57,7 +57,7 @@ module.exports = {
         
         .addField(
             `__Note__`, [
-                `Developed By \`Abhishek Maurya\``
+                `Coded By \`Abhishek Maurya\``
             ]
         )
         .setFooter(
